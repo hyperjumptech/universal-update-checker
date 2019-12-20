@@ -1,0 +1,56 @@
+{
+  "name": "@hyperjumptech/universal-update-checker",
+  "version": "0.0.2",
+  "description": "React component to check if there is a new version of the app",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "build": "rm -rf build && publish-flat -f src -o build && cd build && npm pack",
+    "test": "jest src",
+    "develop": "cd src && sync-glob --watch . ../examples/RNUpdateCheckerExample/node_modules/universal-update-checker"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hyperjumptech/universal-update-checker.git"
+  },
+  "keywords": [
+    "react",
+    "react-native"
+  ],
+  "author": "Nico Prananta <nico@hyperjump.tech>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/hyperjumptech/universal-update-checker.git"
+  },
+  "homepage": "https://github.com/hyperjumptech/universal-update-checker.git",
+  "peerDependencies": {
+    "react": "^16.8.0"
+  },
+  "jest": {
+    "preset": "react-native",
+    "testEnvironment": "jsdom"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "@testing-library/jest-dom": "^4.0.0",
+    "@testing-library/jest-native": "^3.0.2",
+    "@testing-library/react-native": "^4.0.12",
+    "@testing-library/react": "^9.2.0",
+    "babel-jest": "^24.8.0",
+    "eslint": "^6.5.1",
+    "jest": "^24.8.0",
+    "metro-react-native-babel-preset": "^0.56.0",
+    "publish-flat": "^1.2.4",
+    "react-dom": "^16.9.0",
+    "react-native": "0.61.1",
+    "react-test-renderer": "16.9.0",
+    "react": "^16.9.0",
+    "sync-glob": "^1.4.0"
+  }
+}

@@ -1,0 +1,51 @@
+// @flow
+
+import type { Element, ComponentType, Node } from "react";
+
+declare type VersionType = string | number;
+
+declare type UpdateStatusType = "required" | "latest" | "none";
+declare type UpdateCheckData = {
+  isChecking: boolean,
+  updateState: UpdateStatusType,
+  error: any,
+  lastChecked: Date,
+  checkNow: () => void,
+  versions: {
+    latest: VersionType,
+    required: VersionType
+  }
+};
+
+declare type GetUpdateStatusType = {
+  status: UpdateStatusType,
+  versions: {
+    local: VersionType,
+    latest: VersionType,
+    required: VersionType
+  }
+};
+
+declare type UpdateCheckerParams = {
+  getLocalVersion?: () => Promise<VersionType>,
+  getLatestAndRequiredVersions?: () => Promise<{
+    latest: VersionType,
+    required: VersionType
+  }>,
+  getUpdateStatus?: (
+    localVersion: VersionType,
+    latest: VersionType,
+    required: VersionType
+  ) => Promise<GetUpdateStatusType>,
+  interval?: number,
+  version?: VersionType
+};
+
+declare export var useUpdateChecker: (
+  params: UpdateCheckerParams
+) => UpdateCheckData;
+
+declare type UpdateCheckerComponentProps = {
+  children: (data: UpdateCheckData) => Node
+} & UpdateCheckerParams;
+declare export default (props: UpdateCheckerComponentProps) => Node;
