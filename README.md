@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/hyperjumptech/universal-update-checker/_apis/build/status/hyperjumptech.universal-update-checker?branchName=master)](https://dev.azure.com/hyperjumptech/universal-update-checker/_build/latest?definitionId=1&branchName=master)
+
 # Universal Update Checker
 
 ## About
