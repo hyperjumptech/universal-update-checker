@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/hyperjumptech/universal-update-checker.svg?branch=master)](https://travis-ci.org/hyperjumptech/universal-update-checker)
 [![Build Status](https://dev.azure.com/hyperjumptech/universal-update-checker/_apis/build/status/hyperjumptech.universal-update-checker?branchName=master)](https://dev.azure.com/hyperjumptech/universal-update-checker/_build/latest?definitionId=1&branchName=master)
 
 # Universal Update Checker
