@@ -1,15 +1,13 @@
 {
   "name": "@hyperjumptech/universal-update-checker",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React component to check if there is a new version of the app",
-  "main": "src/index.js",
-  "files": [
-    "src"
-  ],
+  "main": "build/index.js",
+  "files": ["build"],
   "scripts": {
-    "build": "rm -rf build && publish-flat -f src -o build && cd build && npm pack",
-    "test": "jest src",
-    "develop": "cd src && sync-glob --watch . ../examples/RNUpdateCheckerExample/node_modules/universal-update-checker"
+    "build-module": "rm -rf build && rm -rf dist && NODE_ENV=production babel src --out-dir build && publish-flat -f build -o dist",
+    "publish-module": "npm run build-module && cd dist && npm publish",
+    "test": "jest src"
   },
   "repository": {
     "type": "git",
@@ -30,7 +28,12 @@
   },
   "jest": {
     "preset": "react-native",
-    "testEnvironment": "jsdom"
+    "testEnvironment": "jsdom",
+    "testPathIgnorePatterns": [
+      "<rootDir>/build/", 
+      "<rootDir>/dist/", 
+      "<rootDir>/node_modules/"
+    ]
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
