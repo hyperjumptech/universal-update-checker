@@ -1,5 +1,6 @@
 import DeviceInfo from 'react-native-device-info';
 import firebase from 'react-native-firebase';
+import { Platform } from 'react-native'
 
 /**
  * get the current version from the app's build number on android and the version string from iOS
@@ -28,7 +29,7 @@ export const getVersionsFromFirebase = () => {
     .then(() => {
       return firebase.config().activateFetched();
     })
-    .then((activated) => {
+    .then(() => {
       return firebase.config().getValues([
         // these properties need to be added in firebase remote config console
         'required_version_ios',
@@ -62,6 +63,7 @@ export const getVersionsFromFirebase = () => {
       return {
         latest: null,
         required: null,
+        error
       };
     });
 };
