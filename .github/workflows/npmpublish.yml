@@ -13,8 +13,8 @@ jobs:
         with:
           node-version: 12
       - run: npm ci
-      - run: npm lint
-      - run: npm test
+      - run: npm run lint
+      - run: npm run test
 
   publish-npm:
     needs: build
