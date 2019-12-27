@@ -1,13 +1,17 @@
 {
   "name": "@hyperjumptech/universal-update-checker",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "React component to check if there is a new version of the app",
   "main": "build/index.js",
-  "files": ["build"],
+  "files": [
+    "build"
+  ],
   "scripts": {
-    "build-module": "rm -rf build && rm -rf dist && NODE_ENV=production babel src --out-dir build && publish-flat -f build -o dist",
+    "clean": "rm -rf build && rm -rf dist",
+    "build-module": "npm run clean && NODE_ENV=production babel src --out-dir build && publish-flat -f build -o dist",
     "publish-module": "npm run build-module && cd dist && npm publish",
-    "test": "jest src"
+    "test": "npm run clean && jest src",
+    "lint": "eslint src && prettier --check \"src/**/*.js\""
   },
   "repository": {
     "type": "git",
@@ -30,8 +34,8 @@
     "preset": "react-native",
     "testEnvironment": "jsdom",
     "testPathIgnorePatterns": [
-      "<rootDir>/build/", 
-      "<rootDir>/dist/", 
+      "<rootDir>/build/",
+      "<rootDir>/dist/",
       "<rootDir>/node_modules/"
     ]
   },
@@ -43,17 +47,21 @@
     "@react-native-community/eslint-config": "^0.0.5",
     "@testing-library/jest-dom": "^4.0.0",
     "@testing-library/jest-native": "^3.0.2",
-    "@testing-library/react-native": "^4.0.12",
     "@testing-library/react": "^9.2.0",
+    "@testing-library/react-native": "^4.0.12",
     "babel-jest": "^24.9.0",
+    "babel-eslint": "^10.0.3",
     "eslint": "^6.5.1",
+    "eslint-plugin-jest": "^23.1.1",
+    "eslint-plugin-react": "^7.17.0",
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.56.0",
+    "prettier": "1.19.1",
     "publish-flat": "^1.2.4",
+    "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-native": "0.61.1",
     "react-test-renderer": "16.9.0",
-    "react": "^16.9.0",
     "sync-glob": "^1.4.0"
   }
 }
