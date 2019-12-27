@@ -31,7 +31,7 @@ test("show isChecking", async () => {
   var shouldResolve = false;
   var intervalId;
   const asyncRemoteVersionMock = () => {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       intervalId = setInterval(() => {
         if (shouldResolve) {
           clearInterval(intervalId);

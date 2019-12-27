@@ -11,7 +11,7 @@
     "build-module": "npm run clean && NODE_ENV=production babel src --out-dir build && publish-flat -f build -o dist",
     "publish-module": "npm run build-module && cd dist && npm publish",
     "test": "npm run clean && jest src",
-    "lint": "eslint src"
+    "lint": "eslint src && prettier --check \"src/**/*.js\""
   },
   "repository": {
     "type": "git",
@@ -55,6 +55,7 @@
     "eslint-plugin-react": "^7.17.0",
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.56.0",
+    "prettier": "1.19.1",
     "publish-flat": "^1.2.4",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
