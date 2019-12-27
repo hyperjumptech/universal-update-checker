@@ -12,6 +12,7 @@ examples/RNUpdateCheckerExample/ios/Pods/
 
 # production
 /build
+/dist
 
 # misc
 /.DS_Store
