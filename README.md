@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/hyperjumptech/universal-update-checker.svg?branch=master)](https://travis-ci.org/hyperjumptech/universal-update-checker)
 [![Build Status](https://dev.azure.com/hyperjumptech/universal-update-checker/_apis/build/status/hyperjumptech.universal-update-checker?branchName=master)](https://dev.azure.com/hyperjumptech/universal-update-checker/_build/latest?definitionId=1&branchName=master)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 # Universal Update Checker
 
